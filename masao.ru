@@ -2,9 +2,9 @@ require 'rack'
 require 'pry'
 
 class Masao
-  def call(env)
+  def self.call(env)
     [200, {"Content-Type" => "text/plain"}, ["Hello, Masao!"]]
   end
 end
 
-run Masao.new.tap { binding.pry }
+run(Masao).tap { binding.pry }
